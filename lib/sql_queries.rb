@@ -1,5 +1,5 @@
 def selects_all_female_bears_return_name_and_age
-  "SELECT name, age FROM bears WHERE gender = 'Female'";
+  "SELECT name, age FROM bears WHERE gender = 'F'";
 end
 
 def selects_all_bears_names_and_orders_in_alphabetical_order
@@ -11,20 +11,19 @@ def selects_all_bears_names_and_ages_that_are_alive_and_order_youngest_to_oldest
 end
 
 def selects_oldest_bear_and_returns_name_and_age
-  "SELECT MAX(age) AS oldest_bear FROM bears"; 
-  "SELECT name, age FROM oldest_bear";
+  "SELECT name, age FROM bears ORDER BY age DESC LIMIT 1";
 end
 
 def select_youngest_bear_and_returns_name_and_age
-  "Write your SQL query here";
+  "SELECT name, age FROM bears ORDER BY age ASC LIMIT 1";
 end
 
 def selects_most_prominent_color_and_returns_with_count
-  "SELECT color, COUNT(color) FROM bears GROUP BY breed";
+  "SELECT color, COUNT(color) FROM bears GROUP BY color ORDER BY color DESC LIMIT 1";
 end
 
 def counts_number_of_bears_with_goofy_temperaments
-  "SELECT temperament, COUNT(temperament) FROM bears WHERE temperament = 'goofy'";
+  "SELECT COUNT(temperament) FROM bears WHERE temperament = 'goofy'";
 end
 
 def selects_bear_that_killed_Tim
